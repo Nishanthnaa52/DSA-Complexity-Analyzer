@@ -1,0 +1,229 @@
+/* --- THEME VARIABLES --- */
+/* Default (Light Theme) */
+body {
+  --background-color: #f4f4f9;
+  --text-color: #212121;
+  --header-color: #4a4a4a;
+  --primary-color: #007aff;
+  --primary-color-hover: #0056b3;
+  --button-text-color: #ffffff;
+  --card-background-color: #ffffff;
+  --input-background-color: #ffffff;
+  --input-border-color: #cccccc;
+  --select-background-color: #e9ecef;
+  --error-color: #d93025;
+}
+
+/* Explicit Light Theme (to override system preference) */
+body.theme-light {
+  --background-color: #f4f4f9;
+  --text-color: #212121;
+  --header-color: #4a4a4a;
+  --primary-color: #007aff;
+  --primary-color-hover: #0056b3;
+  --button-text-color: #ffffff;
+  --card-background-color: #ffffff;
+  --input-background-color: #ffffff;
+  --input-border-color: #cccccc;
+  --select-background-color: #e9ecef;
+  --error-color: #d93025;
+}
+
+/* Explicit Dark Theme */
+body.theme-dark {
+  --background-color: #1c1c1e;
+  --text-color: #f2f2f7;
+  --header-color: #c7c7cc;
+  --primary-color: #0a84ff;
+  --primary-color-hover: #0060df;
+  --button-text-color: #ffffff;
+  --card-background-color: #2c2c2e;
+  --input-background-color: #3a3a3c;
+  --input-border-color: #545458;
+  --select-background-color: #3a3a3c;
+  --error-color: #ff453a;
+}
+
+/* System Dark Theme */
+@media (prefers-color-scheme: dark) {
+  body:not(.theme-light) {
+    --background-color: #1c1c1e;
+    --text-color: #f2f2f7;
+    --header-color: #c7c7cc;
+    --primary-color: #0a84ff;
+    --primary-color-hover: #0060df;
+    --button-text-color: #ffffff;
+    --card-background-color: #2c2c2e;
+    --input-background-color: #3a3a3c;
+    --input-border-color: #545458;
+    --select-background-color: #3a3a3c;
+    --error-color: #ff453a;
+  }
+}
+
+/* --- GENERAL STYLES --- */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  width: 400px;
+  padding: 16px;
+  margin: 0;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+h1 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--header-color);
+  text-align: center;
+  margin: 0;
+}
+
+h2 {
+  font-size: 16px;
+  border-bottom: 1px solid var(--input-border-color);
+  padding-bottom: 8px;
+  margin-top: 0;
+}
+
+h3 {
+  font-size: 14px;
+  color: var(--header-color);
+  margin: 0 0 4px 0;
+}
+
+p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* --- LAYOUT & VIEWS --- */
+#api-key-view, #analyzer-view, #settings-view {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4px;
+}
+
+.container, .settings-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* --- BUTTONS & INPUTS --- */
+button {
+  background-color: var(--primary-color);
+  color: var(--button-text-color);
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: var(--primary-color-hover);
+}
+
+#settings-btn, #back-to-analyzer-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 4px;
+  color: var(--header-color);
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+input[type="password"], input[type="text"] {
+  background-color: var(--input-background-color);
+  border: 1px solid var(--input-border-color);
+  color: var(--text-color);
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.theme-selector, .selector {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+select {
+  flex-grow: 1;
+  background-color: var(--select-background-color);
+  color: var(--text-color);
+  border: 1px solid var(--input-border-color);
+  border-radius: 6px;
+  padding: 8px;
+}
+
+/* --- RESULT & MESSAGES --- */
+#result-container {
+  background-color: var(--card-background-color);
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 12px;
+}
+
+#complexity-display {
+  display: flex;
+  justify-content: space-around;
+  gap: 16px;
+  margin: 16px 0;
+}
+
+.complexity-box {
+  flex: 1;
+  background-color: var(--background-color);
+  padding: 16px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.complexity-box p {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+#onboarding-message {
+  text-align: center;
+  padding: 20px;
+  background-color: var(--card-background-color);
+  border-radius: 8px;
+}
+
+.error-message {
+  color: var(--error-color);
+  font-size: 12px;
+  text-align: center;
+  min-height: 15px;
+}
+
+#explanation-result {
+  margin-top: 8px;
+  font-size: 14px;
+  color: var(--header-color);
+  white-space: pre-wrap; /* Preserve whitespace and newlines */
+  padding: 10px;
+  background-color: var(--background-color);
+  border-radius: 6px;
+}

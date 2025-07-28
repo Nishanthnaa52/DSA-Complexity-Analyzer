@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DSA Complexity Analyzer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- View for the Main Analyzer -->
+  <div id="analyzer-view">
+    <div class="header">
+      <h1>DSA Complexity Analyzer</h1>
+      <button id="settings-btn" title="Settings">⚙️</button>
+    </div>
+    <div class="container">
+      <div class="selector">
+        <label for="llm-select">Provider:</label>
+        <select id="llm-select">
+          <option value="gemini">Gemini</option>
+          <option value="openai">OpenAI (ChatGPT)</option>
+          <option value="local">Local LLM</option>
+        </select>
+      </div>
+      <button id="analyze-btn">Analyze Selected Code</button>
+      <div id="result-container" style="display: none;">
+        <h2>Analysis Result</h2>
+        <div id="complexity-display">
+          <div class="complexity-box">
+            <h3>Time Complexity</h3>
+            <p id="time-complexity-result"></p>
+          </div>
+          <div class="complexity-box">
+            <h3>Space Complexity</h3>
+            <p id="space-complexity-result"></p>
+          </div>
+        </div>
+        <div id="explanation-result"></div>
+      </div>
+       <div id="onboarding-message">
+        <p>Select a piece of code on any webpage and click "Analyze" to start.</p>
+        <p class="setup-notice" style="display: none;">The selected provider requires an API key. Please add it in the settings.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- View for Settings -->
+  <div id="settings-view" style="display: none;">
+    <div class="header">
+      <h1>Settings</h1>
+      <button id="back-to-analyzer-btn" title="Back to Analyzer">⬅️</button>
+    </div>
+    <div class="settings-container">
+      <h3>API Keys</h3>
+      <div class="input-group" data-llm="gemini">
+        <label for="gemini-api-key-input">Google Gemini API Key:</label>
+        <input type="password" id="gemini-api-key-input" placeholder="Enter your Gemini key">
+      </div>
+      <div class="input-group" data-llm="openai">
+        <label for="openai-api-key-input">OpenAI API Key:</label>
+        <input type="password" id="openai-api-key-input" placeholder="Enter your OpenAI key">
+      </div>
+      <div class="input-group" data-llm="local">
+        <label for="local-api-key-input">Local LLM Endpoint:</label>
+        <input type="text" id="local-api-key-input" placeholder="e.g., http://localhost:11434">
+      </div>
+      <h3>Theme</h3>
+      <div class="theme-selector">
+        <label for="theme-select">Appearance:</label>
+        <select id="theme-select">
+          <option value="system">System</option>
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
+        </select>
+      </div>
+      <button id="save-settings-btn">Save Settings</button>
+      <p id="settings-status"></p>
+    </div>
+  </div>
+
+  <!-- Sourcing the new JS files -->
+  <script src="js/vendor/webextension-polyfill.js"></script>
+  <script src="js/storage.js"></script>
+  <script type="module" src="js/api/gemini.js"></script>
+  <script src="js/api/openai.js"></script>
+  <script src="js/api/local.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/popup.js"></script>
+</body>
+</html>
