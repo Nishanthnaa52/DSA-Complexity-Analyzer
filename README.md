@@ -12,7 +12,8 @@ This browser extension helps you analyze the time and space complexity of code s
 
 ## Installation
 
-**Note:** This extension is intended for Chrome and other Chromium-based browsers (e.g., Microsoft Edge, Brave).
+> [!NOTE]  
+> This extension is intended for Chrome and other Chromium-based browsers (e.g., Microsoft Edge, Brave).
 
 To install this extension, you can load it as an unpacked extension in a Chromium-based browser (like Chrome, Edge, or Brave).
 
