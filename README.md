@@ -4,6 +4,9 @@
 
 This browser extension helps you analyze the time and space complexity of code snippets directly in your browser.
 
+> [!NOTE]  
+> This extension is intended for Chrome and other Chromium-based browsers (e.g., Microsoft Edge, Brave).
+
 ## Features
 
 *   **Analyze Code Complexity:** Get the time and space complexity of your selected code.
@@ -11,9 +14,6 @@ This browser extension helps you analyze the time and space complexity of code s
 *   **Easy to Use:** A simple and intuitive interface for quick analysis.
 
 ## Installation
-
-> [!NOTE]  
-> This extension is intended for Chrome and other Chromium-based browsers (e.g., Microsoft Edge, Brave).
 
 To install this extension, you can load it as an unpacked extension in a Chromium-based browser (like Chrome, Edge, or Brave).
 
